@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class Cnh implements Document {
 
-    final String valor;
+    final String value;
 
-    public Cnh(String valor) {
+    public Cnh(String value) {
 
-        if(validar(valor)) throw new DocumentException("O CNH inserido é inválido.");
+        if(validate(value)) throw new DocumentException("O CNH inserido é inválido.");
 
-        this.valor = valor;
+        this.value = value;
     }
 
     private static boolean isValid(String cnh) {
@@ -32,18 +32,18 @@ public class Cnh implements Document {
     }
 
     @Override
-    public String getValor() {
-        return valor;
+    public String getValue() {
+        return value;
     }
 
     @Override
-    public String getValorFormatado() {
-        return this.valor;
+    public String getFormattedValue() {
+        return this.value;
     }
 
     @Override
-    public boolean validar(String valor) {
-        return isValid(valor);
+    public boolean validate(String value) {
+        return isValid(value);
     }
 
     @Override
@@ -51,12 +51,12 @@ public class Cnh implements Document {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cnh cnh = (Cnh) o;
-        return Objects.equals(valor, cnh.valor);
+        return Objects.equals(value, cnh.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(valor);
+        return Objects.hash(value);
     }
 
 }

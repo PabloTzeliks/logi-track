@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class Cnpj implements Document {
 
-    final String valor;
+    final String value;
 
-    public Cnpj(String valor) {
+    public Cnpj(String value) {
 
-        if(validar(valor)) throw new DocumentException("O CNPJ inserido é inválido.");
+        if(validate(value)) throw new DocumentException("O CNPJ inserido é inválido.");
 
-        this.valor = valor;
+        this.value = value;
     }
 
     private static boolean isValid(String cnpj) {
@@ -67,18 +67,18 @@ public class Cnpj implements Document {
     }
 
     @Override
-    public String getValor() {
-        return valor;
+    public String getValue() {
+        return value;
     }
 
     @Override
-    public String getValorFormatado() {
-        return this.valor.replaceFirst("(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})", "$1.$2.$3/$4-$5");
+    public String getFormattedValue() {
+        return this.value.replaceFirst("(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})", "$1.$2.$3/$4-$5");
     }
 
     @Override
-    public boolean validar(String valor) {
-        return isValid(valor);
+    public boolean validate(String value) {
+        return isValid(value);
     }
 
     @Override
@@ -86,11 +86,11 @@ public class Cnpj implements Document {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cnpj cnpj = (Cnpj) o;
-        return Objects.equals(valor, cnpj.valor);
+        return Objects.equals(value, cnpj.value);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(valor);
+        return Objects.hash(value);
     }
 }

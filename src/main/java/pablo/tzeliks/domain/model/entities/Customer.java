@@ -6,14 +6,15 @@ import pablo.tzeliks.domain.model.vo.Cpf;
 public class Customer {
 
     private long id;
-    private String nome;
+    private String name;
     private Cpf cpf;
     private Cnpj cnpj;
-    private String logradouro;
-    private String numero;
-    private String bairro;
-    private String codigoCep;
-    private String complemento;
-    private int idCidade;
+    private String streetAddress;
+    private String streetNumber;
+    private String neighborhood;
+    private String zipCode;
+    private String addressComplement;
+    private int cityId;
+
 
 }

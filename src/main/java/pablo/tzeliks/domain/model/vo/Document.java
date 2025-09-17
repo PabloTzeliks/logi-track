@@ -2,8 +2,8 @@ package pablo.tzeliks.domain.model.vo;
 
 public interface Document {
 
-    String getValor();
-    String getValorFormatado();
-    boolean validar(String valor);
+    String getValue();
+    String getFormattedValue();
+    boolean validate(String value);
 
 }

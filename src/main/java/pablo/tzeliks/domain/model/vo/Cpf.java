@@ -6,13 +6,13 @@ import java.util.Objects;
 
 public class Cpf implements Document {
 
-    final String valor;
+    final String value;
 
-    public Cpf(String valor) {
+    public Cpf(String value) {
 
-        if(validar(valor)) throw new DocumentException("O CPF inserido é inválido.");
+        if(validate(value)) throw new DocumentException("O CPF inserido é inválido.");
 
-        this.valor = valor;
+        this.value = value;
     }
 
     private static boolean isValid(String cpf) {
@@ -57,18 +57,18 @@ public class Cpf implements Document {
     }
 
     @Override
-    public String getValor() {
-        return valor;
+    public String getValue() {
+        return value;
     }
 
     @Override
-    public String getValorFormatado() {
-        return this.valor.replaceFirst("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
+    public String getFormattedValue() {
+        return this.value.replaceFirst("(\\d{3})(\\d{3})(\\d{3})(\\d{2})", "$1.$2.$3-$4");
     }
 
     @Override
-    public boolean validar(String valor) {
-        return isValid(valor);
+    public boolean validate(String value) {
+        return isValid(value);
     }
 
     @Override
@@ -76,7 +76,7 @@ public class Cpf implements Document {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Cpf cpf = (Cpf) o;
-        return Objects.equals(valor, cpf.valor);
+        return Objects.equals(value, cpf.value);
     }
 
     @Override

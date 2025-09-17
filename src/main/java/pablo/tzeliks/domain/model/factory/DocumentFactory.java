@@ -8,12 +8,12 @@ import pablo.tzeliks.domain.model.vo.Document;
 
 public class DocumentFactory {
 
-    public static Document criarCpfOuCnpj(String numeroDocumento) {
-        if (numeroDocumento == null) {
+    public static Document createCpfOrCnpj(String documentNumber) {
+        if (documentNumber == null) {
             throw new DocumentException("Número do documento não pode ser nulo.");
         }
 
-        String cleaned = numeroDocumento.replaceAll("[^0-9]", "");
+        String cleaned = documentNumber.replaceAll("[^0-9]", "");
 
         if (cleaned.length() == 11) {
             return new Cpf(cleaned); // O construtor do Cpf fará a validação final
@@ -24,15 +24,15 @@ public class DocumentFactory {
         }
     }
 
-    public static Cnh criarCnh(String numeroCnh) {
+    public static Cnh createCnh(String CnhNumber) {
 
-        if (numeroCnh == null) {
+        if (CnhNumber == null) {
             throw new DocumentException("Número do documento não pode ser nulo.");
         }
 
-        String cleaned = numeroCnh.replaceAll("[^0-9]", "");
+        String cleaned = CnhNumber.replaceAll("[^0-9]", "");
 
-        return new Cnh(numeroCnh);
+        return new Cnh(CnhNumber);
     }
 
 }
