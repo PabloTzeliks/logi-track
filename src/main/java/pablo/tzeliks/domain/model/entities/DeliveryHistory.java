@@ -22,11 +22,6 @@ public class DeliveryHistory {
         this.description = description;
     }
 
-    public DeliveryHistory(Date eventDate, String description) {
-        this.eventDate = eventDate;
-        this.description = description;
-    }
-
     public long getId() {
         return id;
     }

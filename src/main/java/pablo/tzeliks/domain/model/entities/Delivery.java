@@ -30,12 +30,6 @@ public class Delivery {
         this.status = status;
     }
 
-    public Delivery(LocalDate departureDate, LocalDate deliveryDate, DeliveryStatus status) {
-        this.departureDate = departureDate;
-        this.deliveryDate = deliveryDate;
-        this.status = status;
-    }
-
     public long getId() {
         return id;
     }

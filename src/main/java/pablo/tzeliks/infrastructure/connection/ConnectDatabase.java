@@ -1,4 +1,4 @@
-package pablo.tzeliks.infrastructure.persistence.connection;
+package pablo.tzeliks.infrastructure.connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
