@@ -11,4 +11,38 @@ public class Driver {
     private VehiclePlate vehiclePlate;
     private int baseCityId;
 
+    public Driver(long id, String name, Cnh cnh, VehiclePlate vehiclePlate, int baseCityId) {
+        this.id = id;
+        this.name = name;
+        this.cnh = cnh;
+        this.vehiclePlate = vehiclePlate;
+        this.baseCityId = baseCityId;
+    }
+
+    public Driver(String name, Cnh cnh, VehiclePlate vehiclePlate, int baseCityId) {
+        this.name = name;
+        this.cnh = cnh;
+        this.vehiclePlate = vehiclePlate;
+        this.baseCityId = baseCityId;
+    }
+
+    public long gentId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public Cnh getCnh() {
+        return cnh;
+    }
+
+    public VehiclePlate getVehiclePlate() {
+        return vehiclePlate;
+    }
+
+    public int getBaseCityId() {
+        return baseCityId;
+    }
 }
