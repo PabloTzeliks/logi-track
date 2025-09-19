@@ -1,14 +1,17 @@
 package pablo.tzeliks.domain.repository;
 
-import pablo.tzeliks.application.dto.CustomerDTO;
+import pablo.tzeliks.domain.model.entities.Customer;
+import pablo.tzeliks.domain.model.vo.Document;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomerRepository {
 
-    public void save(CustomerDTO customer);
-    public void delete(CustomerDTO customer);
-    public CustomerDTO findById(long id);
-    public List<CustomerDTO> findAll();
-
+    Customer save(Customer customer);
+    Customer update(Customer customer);
+    void deleteById(Long id);
+    Optional<Customer> findById(Long id);
+    Optional<Customer> findByDocument(Document document);
+    List<Customer> findAll();
 }
